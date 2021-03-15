@@ -1,0 +1,12 @@
+<form action="/preformsignup" method="post">
+    <input type="text" name="name" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button name="toggle" type="submit" class="btn">Signup</button>
+    <p>len of username should be greater than 2 characters and smaller than 20 characters</p>
+    <p>len of password should be greater than 7 characters</p>
+    <p> {{ error }} </p>
+</form>
+
+<form action="/login">
+    <button name="toggle" type="submit" class="btn">Login</button>
+</form>
