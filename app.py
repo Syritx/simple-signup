@@ -44,7 +44,7 @@ def preformlogin():
         _user = str(u[0]).lower()
         _pass = str(u[1]).lower()
         if _user == username_input and _pass == password:
-            local_user_data.append(str(request.form['name']))
+            local_user_data.append(str(u[0]))
             is_currently_logged_in = True
             return redirect(url_for('home'))
 
@@ -57,6 +57,12 @@ def preformsignup():
     global error_message, is_currently_logged_in, local_user_data
     username = str(request.form['name'])
     password = str(request.form['password'])
+
+    confirmed_password = str(request.form['confirmpassword'])
+
+    if confirmed_password != password:
+        error_message = 'Passwords do not match'
+        return redirect(url_for('signup'))
 
     if (len(username) > 2  and len(username) < 21 and len(password) > 7):
 

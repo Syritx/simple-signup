@@ -1,4 +1,59 @@
-<p> {{ usr }} </p>
-<form action="/preformlogout" method="post">
-    <button name="toggle" type="submit" class="btn">Logout</button>
-</form>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap');
+    .nav {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(30, 30, 30);
+        display: flex;
+    }
+
+    .nav-label {
+        margin-left: 10px;
+        font-size: 20px;
+        color: white;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    .inner-nav {
+        width: 120px;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(30, 30, 30);
+        color: white;
+        border-radius: 0px;
+        border: 0px;
+        font-size: 15px;
+        font-weight: 500;
+        margin-right: 30px;
+    }
+    .btn:hover {
+        cursor: pointer;
+        background-color: rgb(25, 25, 25);
+    }
+
+</style>
+
+<div class="nav">
+    <div class="inner-nav">
+        <div class="nav-label">Syritx</div>
+    </div>
+
+    <form style="display: flex; align-items: center;" action="/preformlogout" method="post">
+        <button name="toggle" type="submit" class="btn"> < </button>
+    </form>
+
+    <div style="width: max-content; align-self: center; color: white; font-family: 'Montserrat';"> {{ usr }} </div>
+</div>
