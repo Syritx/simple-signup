@@ -86,7 +86,11 @@ def preformsignup():
 def home():
     global local_user_data
     
-    return render_template('home.html', usr=local_user_data[0])
+    if is_currently_logged_in:
+        return render_template('home.html', usr=local_user_data[0])
+
+    else:
+        return redirect(url_for('signup'))
 
 
 ## logs out the user
